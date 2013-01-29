@@ -13,44 +13,56 @@ public class Piste {
     private Piste Pohjoinen,Etela,Ita,Lansi;
     
     public Piste(){
-        
+        Suunta suunta;
     }
     
-    public void lisaaYhteys(Piste yhteys, int suunta){  //Suunta: 1=Pohjoinen, 2=itä, 3=etelä,4=lansi
+    public void lisaaYhteys(Piste yhteys, Suunta suunta){  //Suunta: 1=Pohjoinen, 2=itä, 3=etelä,4=lansi
         switch(suunta){
-            case(1):
+            case Pohjoinen:
                 Pohjoinen = yhteys;
                 break;
-            case(2):
+            case Ita:
                 Ita=yhteys;
                 break;
-            case(3):
+            case Etela:
                 Etela=yhteys;
                 break;
-            case(4):
+            case Lansi:
                 Lansi=yhteys;
                 break;          
         }
        
     }
     
-    public Piste Yhteys(int suunta){
+    public Piste Yhteys(Suunta suunta){
         switch(suunta){
-            case(1):
+            case Pohjoinen:
                 return Pohjoinen;
-            case(2):
+            case Ita:
                 return Ita;
-            case(3):
+            case Etela:
                 return Etela;
-            case(4):
+            case Lansi:
                 return Lansi;          
         }
         return null;
     }
     
+    public boolean OnkoYhteys(Suunta suunta){
+        switch(suunta){
+            case Pohjoinen:
+                return OnkoYhteysPohjoiseen();
+            case Ita:
+                return OnkoYhteysitaan();
+            case Etela:
+                return OnkoYhteysEtelaan();
+            case Lansi:
+                return OnkoYhteysLanteen();          
+        }
+        return false;
+    }
     
-    
-    public boolean OnkoYhteysPohjoiseen(){
+    private boolean OnkoYhteysPohjoiseen(){
         if (Pohjoinen != null) {
             return true;
         }
@@ -59,7 +71,7 @@ public class Piste {
         }
     }
     
-    public boolean OnkoYhteysitaan(){
+    private boolean OnkoYhteysitaan(){
         if (Ita != null) {
             return true;
         }
@@ -68,7 +80,7 @@ public class Piste {
         }
     }
     
-    public boolean OnkoYhteysEtelaan(){
+    private boolean OnkoYhteysEtelaan(){
         if (Etela != null) {
             return true;
         }
@@ -77,7 +89,7 @@ public class Piste {
         }
     }
     
-    public boolean OnkoYhteysLanteen(){
+    private boolean OnkoYhteysLanteen(){
         if (Lansi != null) {
             return true;
         }

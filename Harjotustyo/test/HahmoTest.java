@@ -5,12 +5,13 @@
 
 import harjotustyo.Hahmo;
 import harjotustyo.Piste;
+import harjotustyo.Suunta;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -20,6 +21,7 @@ public class HahmoTest {
     Piste alku = new Piste();
     Piste pohjoisessa = new Piste();
        Hahmo ukko = new Hahmo ("Testinimi",alku);
+      Suunta suunta;
     
     
     public HahmoTest() {
@@ -54,22 +56,22 @@ public class HahmoTest {
     
     @Test
     public void LiikkuukoHahmoPohjoiseen(){
-        alku.lisaaYhteys(pohjoisessa, 1);
+        alku.lisaaYhteys(pohjoisessa, Suunta.Pohjoinen);
         
-        ukko.liiku(1);
+        ukko.liiku(Suunta.Pohjoinen);
         assertEquals(pohjoisessa,ukko.hahmonSijainti());
     }
     @Test
     public void HahmoEiLiikuJosEiYhteytta(){
-        ukko.liiku(2);
+        ukko.liiku(Suunta.Ita);
         assertEquals(alku,ukko.hahmonSijainti());
     }
     @Test
     public void HahmoLiikkuuEdesTakas(){
-        alku.lisaaYhteys(pohjoisessa, 1);
-        pohjoisessa.lisaaYhteys(alku, 3);
-        ukko.liiku(1);
-        ukko.liiku(3);
+        alku.lisaaYhteys(pohjoisessa, Suunta.Pohjoinen);
+        pohjoisessa.lisaaYhteys(alku, Suunta.Etela);
+        ukko.liiku(Suunta.Pohjoinen);
+        ukko.liiku(Suunta.Etela);
         assertEquals(alku,ukko.hahmonSijainti());
     }
 }

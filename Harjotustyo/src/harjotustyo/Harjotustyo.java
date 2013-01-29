@@ -14,6 +14,7 @@ public class Harjotustyo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Kayttis k =new Kayttis();
+        k.run();
     }
 }

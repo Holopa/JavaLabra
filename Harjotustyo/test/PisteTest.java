@@ -4,6 +4,7 @@
  */
 
 import harjotustyo.Piste;
+import harjotustyo.Suunta;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,6 +20,7 @@ public class PisteTest {
     
     Piste eka = new Piste();
     Piste toka =new Piste();
+    Suunta suunta;
     
     public PisteTest() {
     }
@@ -41,30 +43,30 @@ public class PisteTest {
     
     @Test
     public void LisätäänYhteys(){
-        eka.lisaaYhteys(toka, 1);
-        assertEquals(true,eka.OnkoYhteysPohjoiseen());
+        eka.lisaaYhteys(toka, Suunta.Pohjoinen);
+        assertEquals(true,eka.OnkoYhteys(Suunta.Pohjoinen));
     }
     @Test
     public void YhteysTosiaanOnOlemassaTokaan(){
-        eka.lisaaYhteys(toka, 1);
-        assertEquals(toka,eka.Yhteys(1));        
+        eka.lisaaYhteys(toka, Suunta.Pohjoinen);
+        assertEquals(toka,eka.Yhteys(Suunta.Pohjoinen));        
     }
     @Test
     public void YhdistetaanTyhjaan(){
-        eka.lisaaYhteys(null, 1);
-        assertEquals(false,eka.OnkoYhteysPohjoiseen());
+        eka.lisaaYhteys(null, Suunta.Pohjoinen);
+        assertEquals(false,eka.OnkoYhteys(Suunta.Pohjoinen));
     }
     @Test
     public void YhteysItseensaOnnistuu(){
-        eka.lisaaYhteys(eka, 1);
-        assertEquals(true,eka.OnkoYhteysPohjoiseen());
+        eka.lisaaYhteys(eka, Suunta.Pohjoinen);
+        assertEquals(true,eka.OnkoYhteys(Suunta.Pohjoinen));
     }
     @Test
     public void YhteydenPaalleLaitetaanUusiYhteys(){
         Piste kolmas = new Piste();
-        eka.lisaaYhteys(toka, 1);
-        eka.lisaaYhteys(kolmas, 1);
-        assertEquals(kolmas,eka.Yhteys(1));
+        eka.lisaaYhteys(toka, Suunta.Pohjoinen);
+        eka.lisaaYhteys(kolmas, Suunta.Pohjoinen);
+        assertEquals(kolmas,eka.Yhteys(Suunta.Pohjoinen));
     }
     
     

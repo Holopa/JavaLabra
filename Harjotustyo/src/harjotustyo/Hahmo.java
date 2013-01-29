@@ -11,6 +11,7 @@ package harjotustyo;
 public class Hahmo {
     private String nimi;
     private Piste sijainti;
+    private Suunta suunta;
     
     public Hahmo(String nimi, Piste aloituspaikka){
         this.nimi=nimi;
@@ -23,45 +24,47 @@ public class Hahmo {
     public Piste hahmonSijainti(){
         return sijainti;
     }
-    public void liiku(int suunta){   //Suunta: 1=Pohjoinen, 2=itä, 3=etelä,4=lansi
+    public void liiku(Suunta suunta){   //Suunta: 1=Pohjoinen, 2=itä, 3=etelä,4=lansi
         switch (suunta) {
-            case 1:
+            case Pohjoinen:
                 liikupohjoiseen();
                 break;
-            case 4:
-                liikulanteen();
-                break;
-            case 3:
-                liikuetelaan();
-                break;
-            case 2:
+            case Ita:
                 liikuitaan();
                 break;
+            case Etela:
+                liikuetelaan();
+                break;
+            case Lansi:
+                liikulanteen();
+                break;
+
+            
         }
     }
 
     private void liikupohjoiseen() {
-        if (sijainti.OnkoYhteysPohjoiseen()){
-            sijainti= sijainti.Yhteys(1);
+        if (sijainti.OnkoYhteys(Suunta.Pohjoinen)){
+            sijainti= sijainti.Yhteys(Suunta.Pohjoinen);
         }
             
     }
 
     private void liikulanteen() {
-        if (sijainti.OnkoYhteysLanteen()){
-            sijainti= sijainti.Yhteys(4);
+        if (sijainti.OnkoYhteys(Suunta.Lansi)){
+            sijainti= sijainti.Yhteys(Suunta.Lansi);
         }
     }
 
     private void liikuetelaan() {
-        if (sijainti.OnkoYhteysEtelaan()){
-            sijainti= sijainti.Yhteys(3);
+        if (sijainti.OnkoYhteys(Suunta.Etela)){
+            sijainti= sijainti.Yhteys(Suunta.Etela);
         }
     }
 
     private void liikuitaan() {
-        if (sijainti.OnkoYhteysitaan()){
-            sijainti= sijainti.Yhteys(2);
+        if (sijainti.OnkoYhteys(Suunta.Ita)){
+            sijainti= sijainti.Yhteys(Suunta.Ita);
         }
     }
 }
