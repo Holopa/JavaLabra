@@ -11,9 +11,10 @@ package harjotustyo;
 public class Piste {
     
     private Piste Pohjoinen,Etela,Ita,Lansi;
+    private Maasto maasto;
     
-    public Piste(){
-        Suunta suunta;
+    public Piste(Maasto maasto){
+        this.maasto=maasto;      
     }
     
     public void lisaaYhteys(Piste yhteys, Suunta suunta){  //Suunta: 1=Pohjoinen, 2=itä, 3=etelä,4=lansi
@@ -96,5 +97,9 @@ public class Piste {
         else {
             return false;
         }
+    }
+
+    Maasto maasto() {
+        return maasto;
     }
 }

@@ -5,7 +5,8 @@
 package harjotustyo;
 
 /**
- *
+ * Hahmo luokka pitää kirjaa hahmon nimestä, sijainnista ja suunnasta
+ * 
  * @author jwholopa
  */
 public class Hahmo {
@@ -24,6 +25,15 @@ public class Hahmo {
     public Piste hahmonSijainti(){
         return sijainti;
     }
+    
+    /**
+     * mitä tämä metodi tekee?
+     * 
+     * 
+     * @param suunta mitä parametri suunta tekee
+     */
+    
+    
     public void liiku(Suunta suunta){   //Suunta: 1=Pohjoinen, 2=itä, 3=etelä,4=lansi
         switch (suunta) {
             case Pohjoinen:
