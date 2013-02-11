@@ -1,0 +1,16 @@
+﻿Aihe: Roolipeli, mahdollisesti tekstipohjainen?
+Toteutus: 
+-Pelikentäksi tehdään matriisimuotoinen kartta, jossa pelaaja voi liikkua pisteistä toisiin.
+-pisteillä eli paikoilla on ominaisuuksia
+-vuoropohjainen
+-hahmoon liittyvää statistiikkaa esillä
+
+
+Käyttäjät: Pelaaja
+Käyttäjän toiminnot: 
+-Hahmon luonti
+	-nimen valinta
+-liikkuminen
+-tappeleminen
+-pelin tallennus?
+-pelin lopetus

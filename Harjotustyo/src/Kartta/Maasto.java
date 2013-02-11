@@ -2,12 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package harjotustyo;
+package Kartta;
 
 /**
- *
+ * Kertoo minkälaisia maastotyyppiä pisteissä voi olla.
+ * 
  * @author jwholopa
  */
-public enum Suunta {Pohjoinen, Ita, Etela, Lansi
+public enum Maasto { METSA, SEINA
     
 }

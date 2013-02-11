@@ -3,9 +3,11 @@
  * and open the template in the editor.
  */
 
-import harjotustyo.Hahmo;
-import harjotustyo.Piste;
-import harjotustyo.Suunta;
+import Kartta.Kartta;
+import Olennot.Hahmo;
+import Kartta.Maasto;
+import Kartta.Piste;
+import Kartta.Suunta;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
@@ -18,10 +20,9 @@ import org.junit.Test;
  * @author jwholopa
  */
 public class HahmoTest {
-    Piste alku = new Piste();
-    Piste pohjoisessa = new Piste();
-       Hahmo ukko = new Hahmo ("Testinimi",alku);
-      Suunta suunta;
+    Kartta k=new Kartta("1230", 2);
+    Hahmo ukko = new Hahmo ("Testinimi",k.getKartta()[0][0]);
+    Suunta suunta;
     
     
     public HahmoTest() {
@@ -48,30 +49,61 @@ public class HahmoTest {
        
        assertEquals("Testinimi",ukko.hahmonnimi() );
     }
-    
+    @Test
+    public void VoimaAlussaYksi(){
+        assertEquals(1,ukko.getVoima());
+    }
+    @Test
+    public void PisteetAlussaNolla(){
+        assertEquals(0,ukko.getPisteet());
+    }
     @Test
     public void SijantiTuleeOikein(){
-        assertEquals(alku,ukko.hahmonSijainti());
+        assertEquals(k.getKartta()[0][0],ukko.hahmonSijainti());
     }
     
     @Test
-    public void LiikkuukoHahmoPohjoiseen(){
-        alku.lisaaYhteys(pohjoisessa, Suunta.Pohjoinen);
-        
-        ukko.liiku(Suunta.Pohjoinen);
-        assertEquals(pohjoisessa,ukko.hahmonSijainti());
+    public void LiikkuukoHahmoItaan(){               
+        ukko.liiku(Suunta.Ita);
+        assertEquals(k.getKartta()[1][0],ukko.hahmonSijainti());
     }
     @Test
     public void HahmoEiLiikuJosEiYhteytta(){
-        ukko.liiku(Suunta.Ita);
-        assertEquals(alku,ukko.hahmonSijainti());
+        ukko.liiku(Suunta.Pohjoinen);
+        assertEquals(k.getKartta()[0][0],ukko.hahmonSijainti());
     }
     @Test
     public void HahmoLiikkuuEdesTakas(){
-        alku.lisaaYhteys(pohjoisessa, Suunta.Pohjoinen);
-        pohjoisessa.lisaaYhteys(alku, Suunta.Etela);
-        ukko.liiku(Suunta.Pohjoinen);
         ukko.liiku(Suunta.Etela);
-        assertEquals(alku,ukko.hahmonSijainti());
+        ukko.liiku(Suunta.Pohjoinen);
+        assertEquals(k.getKartta()[0][0],ukko.hahmonSijainti());
+    }
+    @Test
+    public void PoimiikoHahmoSienen(){
+        ukko.liiku(Suunta.Etela);
+        assertEquals(null,k.getKartta()[0][1].getSieni());
+    }
+    @Test
+    public void SaakoPistesienestaPisteita(){
+        ukko.liiku(Suunta.Etela);
+        assertEquals(100,ukko.getPisteet());
+    }
+    @Test
+    public void SaakoVoimasienestaVoimaa(){
+        ukko.liiku(Suunta.Ita);
+        assertEquals(11,ukko.getVoima());
+    }
+    @Test
+    public void EiMenetaPisteitaJosLiikkuuSeinaaPain(){
+        ukko.liiku(Suunta.Ita);
+        ukko.liiku(Suunta.Etela);
+        ukko.liiku(Suunta.Etela);
+        assertEquals(0,ukko.getPisteet());
+    }
+    @Test
+    public void PisteetVaheneeKunLiikkuu(){
+        ukko.liiku(Suunta.Ita);
+        ukko.liiku(Suunta.Lansi);
+        assertEquals(-5,ukko.getPisteet());
     }
 }

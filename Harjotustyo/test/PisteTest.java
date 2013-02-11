@@ -3,8 +3,9 @@
  * and open the template in the editor.
  */
 
-import harjotustyo.Piste;
-import harjotustyo.Suunta;
+import Kartta.Maasto;
+import Kartta.Piste;
+import Kartta.Suunta;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,8 +19,8 @@ import static org.junit.Assert.*;
  */
 public class PisteTest {
     
-    Piste eka = new Piste();
-    Piste toka =new Piste();
+    Piste eka = new Piste(Maasto.METSA,1,1);
+    Piste toka =new Piste(Maasto.METSA,1,1);
     Suunta suunta;
     
     public PisteTest() {
@@ -63,7 +64,7 @@ public class PisteTest {
     }
     @Test
     public void YhteydenPaalleLaitetaanUusiYhteys(){
-        Piste kolmas = new Piste();
+        Piste kolmas = new Piste(Maasto.METSA,1,1);
         eka.lisaaYhteys(toka, Suunta.Pohjoinen);
         eka.lisaaYhteys(kolmas, Suunta.Pohjoinen);
         assertEquals(kolmas,eka.Yhteys(Suunta.Pohjoinen));
