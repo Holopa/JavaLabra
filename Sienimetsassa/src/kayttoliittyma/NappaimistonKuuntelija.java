@@ -44,8 +44,7 @@ public class NappaimistonKuuntelija implements KeyListener {
             hahmo.liiku(Suunta.Pohjoinen);
         }
         else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            hahmo.liiku(Suunta.Etela);
-            System.out.println("aa");
+            hahmo.liiku(Suunta.Etela);            
         }
 
         pisteet.setText(hahmo.getPisteet());

@@ -7,6 +7,7 @@ package KarttaTestit;
 
 import Kartta.Kartta;
 import Kartta.Maasto;
+import Kartta.Suunta;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -20,7 +21,7 @@ import static org.junit.Assert.*;
  */
 public class KarttaTest {
     
-    Kartta map=new Kartta("0110", 2);
+    Kartta map=new Kartta("1110", 2);
     
     public KarttaTest() {
     }
@@ -55,6 +56,22 @@ public class KarttaTest {
     @Test
     public void LuoKartanOikeinNegatiivisetkordinaatit(){
         assertEquals(null, map.Maasto(-1, 2));
+    }
+    @Test
+    public void LuoKartanOikeinYhteydet(){
+        assertEquals(true, map.getKartta()[0][0].OnkoYhteys(Suunta.Etela));
+    }
+    @Test
+    public void LuoKartanOikeinOnkoyhtyttaSeinaan(){
+        assertEquals(false, map.getKartta()[1][0].OnkoYhteys(Suunta.Ita));
+    }
+    @Test
+    public void LuoKartanOikeinOnkoyhtyttaSeinasta(){
+        assertEquals(false, map.getKartta()[1][1].OnkoYhteys(Suunta.Lansi));
+    }
+    @Test
+    public void LuoKartanOikeinOnkoyhtyttaUlkopuolelle(){
+        assertEquals(false, map.getKartta()[0][0].OnkoYhteys(Suunta.Lansi));
     }
     
 }

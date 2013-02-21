@@ -52,12 +52,12 @@ public class HahmoTest {
        assertEquals("Testinimi",ukko.hahmonnimi() );
     }
     @Test
-    public void VoimaAlussaYksi(){
-        assertEquals(1,ukko.getVoima());
+    public void VoimaAlussaNolla(){
+        assertEquals("0",ukko.getVoima());
     }
     @Test
     public void PisteetAlussaNolla(){
-        assertEquals(0,ukko.getPisteet());
+        assertEquals(0,ukko.pisteet());
     }
     @Test
     public void SijantiTuleeOikein(){
@@ -88,24 +88,24 @@ public class HahmoTest {
     @Test
     public void SaakoPistesienestaPisteita(){
         ukko.liiku(Suunta.Etela);
-        assertEquals(100,ukko.getPisteet());
+        assertEquals(100,ukko.pisteet());
     }
     @Test
     public void SaakoVoimasienestaVoimaa(){
         ukko.liiku(Suunta.Ita);
-        assertEquals(11,ukko.getVoima());
+        assertEquals("10",ukko.getVoima());
     }
     @Test
     public void EiMenetaPisteitaJosLiikkuuSeinaaPain(){
         ukko.liiku(Suunta.Ita);
         ukko.liiku(Suunta.Etela);
         ukko.liiku(Suunta.Etela);
-        assertEquals(0,ukko.getPisteet());
+        assertEquals(0,ukko.pisteet());
     }
     @Test
     public void PisteetVaheneeKunLiikkuu(){
         ukko.liiku(Suunta.Ita);
         ukko.liiku(Suunta.Lansi);
-        assertEquals(-5,ukko.getPisteet());
+        assertEquals(-5,ukko.pisteet());
     }
 }

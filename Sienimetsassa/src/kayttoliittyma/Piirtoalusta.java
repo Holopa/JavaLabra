@@ -25,7 +25,7 @@ import javax.swing.JPanel;
 public class Piirtoalusta extends JPanel {
     
     
-    public final int skaalaus = 15;
+    public final int skaalaus = 14;
     private BufferedImage kuva;
     private Kartta kartta;
     private Hahmo ukko;
