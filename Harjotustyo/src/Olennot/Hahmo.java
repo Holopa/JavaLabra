@@ -32,12 +32,14 @@ public class Hahmo {
         sijainti=aloituspaikka;
     }
 
-    public int getPisteet() {
-        return pisteet;
+    public String getPisteet() {
+        String apu=""+pisteet;
+        return apu;
     }
 
-    public int getVoima() {
-        return voima;
+    public String getVoima() {
+        String apu=""+voima;
+        return apu;
     }
     
     
@@ -81,6 +83,10 @@ public class Hahmo {
             }
         }
     }
+
+    public int pisteet() {
+        return pisteet;
+    }
     /**
      * Piirtää hahmon sen sijaintiin
      * 
@@ -90,7 +96,7 @@ public class Hahmo {
          
         
        try{ 
-           kuva = ImageIO.read(new File("/cs/fs/home/jwholopa/JavaLabra/HahmoMetsassa.jpg"));
+           kuva = ImageIO.read(new File("/fs/home/jwholopa/JavaLabra/HahmoMetsassa.jpg"));
            graphics.drawImage(kuva, sijainti.getX()*skaalaus, sijainti.getY()*skaalaus, null);
        } catch (IOException ex) {
              graphics.setColor(Color.RED);

@@ -10,7 +10,8 @@ import Peli.Peli;
 import Peli.Tulokset;
 import Peli.Vaikeustaso;
 import java.io.FileNotFoundException;
-import kayttoliittyma.Kayttis;
+import kayttoliittyma.AloitusLiittyma;
+import kayttoliittyma.PeliKayttis;
 
 /**
  *
@@ -22,8 +23,13 @@ public class Sienimetsa {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException {
-//        Peli p =new Peli(Vaikeustaso.HELPPO,"Seppo");
-        Tulokset t=new Tulokset();
-        t.lueTulokset();
+        AloitusLiittyma peli=new AloitusLiittyma();
+        peli.run();
+        
+        
+//        Kartta kartta = new Kartta("111211310110200114002", 5);
+//        Hahmo seppo=new Hahmo("Seppo", kartta.getKartta()[0][0]);
+//        Kayttis kayttoliittyma = new Kayttis(kartta,seppo);
+//        kayttoliittyma.run();
     }
 }

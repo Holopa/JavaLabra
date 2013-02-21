@@ -80,6 +80,7 @@ public class Piirtoalusta extends JPanel {
                    graphics.drawImage(kuva, i, j, null);
                     
                } catch (IOException ex) {
+                   graphics.setColor(Color.BLUE);
                     graphics.fillOval(i*skaalaus, j*skaalaus, 10, 10);
                }
                 break;
@@ -90,6 +91,7 @@ public class Piirtoalusta extends JPanel {
                    kuva = ImageIO.read(new File("/cs/fs/home/jwholopa/JavaLabra/PisteSieni.jpg"));
                    graphics.drawImage(kuva, i, j, null);
                } catch (IOException ex) {
+                   graphics.setColor(Color.YELLOW);
                     graphics.fillOval(i*skaalaus, j*skaalaus, 10, 10);
                }
                 break;
@@ -99,6 +101,7 @@ public class Piirtoalusta extends JPanel {
                    kuva = ImageIO.read(new File("/cs/fs/home/jwholopa/JavaLabra/Sienimies.jpg"));
                    graphics.drawImage(kuva, i, j, null);
                } catch (IOException ex) {
+                   graphics.setColor(Color.BLACK);
                     graphics.fillOval(i*skaalaus, j*skaalaus, 10, 10);
                }
                 break;
