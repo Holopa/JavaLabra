@@ -1,0 +1,6 @@
+﻿Kehityskohteet:
+Pisteitten keräys ja esitys alkuliittymässä.
+Kunnon lopetus peliin joka avaisi alkuliittymän ja näyttäisi edellisin pelin pisteet.
+Tyylikkäämpi kuolema hahmolle jos hän häviää tappelun sienimiehelle.
+Mahdollisuus valita pelin vaikeustaso.
+Useampia ratoja mistä joka kerta valittaisiin jokin sattumanvaraisesti.
