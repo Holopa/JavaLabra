@@ -67,17 +67,17 @@ public class PeliKayttis implements Runnable, ActionListener{
         panel.add(voima);
         
                 
-        JButton lopetusnappi=new JButton("Lopeta");
-        lopetusnappi.addActionListener(this);
-        lopetusnappi.transferFocus();
-        container.add(lopetusnappi,BorderLayout.SOUTH);
+//        JButton lopetusnappi=new JButton("Lopeta");
+//        lopetusnappi.addActionListener(this);
+//        lopetusnappi.transferFocus();
+//        container.add(lopetusnappi,BorderLayout.SOUTH);
         
         
        container.add(panel,BorderLayout.NORTH);
         
         Piirtoalusta piirto= new Piirtoalusta(kartta, ukko);
         container.add(piirto,BorderLayout.CENTER);
-        piirto.addKeyListener(new NappaimistonKuuntelija(ukko, piirto,pisteet,voima));
+        frame.addKeyListener(new NappaimistonKuuntelija(ukko, piirto,pisteet,voima));
 
 
         
