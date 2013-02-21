@@ -27,6 +27,7 @@ public class Hahmo {
     private int pisteet =0;
     private int voima = 0;
     private boolean hengissa;
+    private final int kuolinjalki=3;
     
     public Hahmo(String nimi, Piste aloituspaikka){
         this.nimi=nimi;
@@ -108,7 +109,7 @@ public class Hahmo {
        }
        else{
            graphics.setColor(Color.RED);
-             graphics.fillOval(sijainti.getX()*skaalaus, sijainti.getY()*skaalaus, 45, 40);
+             graphics.fillOval(sijainti.getX()*skaalaus-kuolinjalki*skaalaus/3, sijainti.getY()*skaalaus-kuolinjalki*skaalaus/3, skaalaus*kuolinjalki, skaalaus*kuolinjalki);
        }
                
         
@@ -162,11 +163,12 @@ public class Hahmo {
          else if (sijainti.getSieni() == Sieni.SIENIMIES){
             boolean voittiko= tappele();
             if (voittiko){
-                pisteet= pisteet+100;
+                pisteet= pisteet+200;
                 sijainti.setSieni(null);
             }
             else{
                 hengissa=false;
+                pisteet= pisteet-100;
                 katkaiseyhteydet();
             }
         }

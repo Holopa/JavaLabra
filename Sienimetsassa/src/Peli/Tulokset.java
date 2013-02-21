@@ -38,7 +38,7 @@ public class Tulokset {
             }
             tulokset[apu]=skanneri.nextLine();
             
-            System.out.println(lukutaulu[apu]);
+//            System.out.println(lukutaulu[apu]);
             apu++;
         }
     }
