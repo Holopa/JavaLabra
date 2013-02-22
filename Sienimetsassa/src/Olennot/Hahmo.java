@@ -100,10 +100,10 @@ public class Hahmo {
          
        if (hengissa){ 
        try{ 
-           kuva = ImageIO.read(new File("/fs/home/jwholopa/JavaLabra/HahmoMetsassa.jpg"));
+           kuva = ImageIO.read(new File("HahmoMetsassa.jpg"));
            graphics.drawImage(kuva, sijainti.getX()*skaalaus, sijainti.getY()*skaalaus, null);
        } catch (IOException ex) {
-             graphics.setColor(Color.RED);
+             graphics.setColor(Color.BLACK);
              graphics.fillOval(sijainti.getX()*skaalaus, sijainti.getY()*skaalaus, 10, 10);
        }
        }

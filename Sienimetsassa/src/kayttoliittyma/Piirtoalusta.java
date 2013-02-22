@@ -55,6 +55,13 @@ public class Piirtoalusta extends JPanel {
         ukko.piirra(graphics, skaalaus);
     }
 
+    /**
+     * piirtää maaston mukaisen värin kordinaattiin i,j
+     * @param i
+     * @param j
+     * @param maasto
+     * @param graphics 
+     */
     private void piirrä(int i, int j, Maasto maasto, Graphics graphics) {
          switch (maasto){
             case METSA:{
@@ -72,37 +79,44 @@ public class Piirtoalusta extends JPanel {
                 
     }
 
+    /**
+     * Piirtää sienen kordinaatteihin i,j piirtää sienen sieniparametrin mukaan.
+     * @param i
+     * @param j
+     * @param sieni
+     * @param graphics 
+     */
     private void piirräSieni(int i, int j, Sieni sieni, Graphics graphics) {
         switch(sieni){
             case VOIMASIENI:{     
                 try{ 
-                   kuva = ImageIO.read(new File("/cs/fs/home/jwholopa/JavaLabra/VoimaSieni.jpg"));
+                   kuva = ImageIO.read(new File("VoimaSieni.jpg"));
                    graphics.drawImage(kuva, i, j, null);
                     
                } catch (IOException ex) {
-                   graphics.setColor(Color.BLUE);
-                    graphics.fillOval(i*skaalaus, j*skaalaus, 10, 10);
+                   graphics.setColor(Color.RED);
+                    graphics.fillRect(i, j, skaalaus, skaalaus);
                }
                 break;
             }
                 
             case PISTESIENI:{
                 try{ 
-                   kuva = ImageIO.read(new File("/cs/fs/home/jwholopa/JavaLabra/PisteSieni.jpg"));
+                   kuva = ImageIO.read(new File("PisteSieni.jpg"));
                    graphics.drawImage(kuva, i, j, null);
                } catch (IOException ex) {
-                   graphics.setColor(Color.YELLOW);
-                    graphics.fillOval(i*skaalaus, j*skaalaus, 10, 10);
+                   graphics.setColor(Color.BLUE);
+                   graphics.fillRect(i, j, skaalaus, skaalaus);
                }
                 break;
             }
                 case SIENIMIES:{
                 try{ 
-                   kuva = ImageIO.read(new File("/cs/fs/home/jwholopa/JavaLabra/Sienimies.jpg"));
+                   kuva = ImageIO.read(new File("Sienimies.jpg"));
                    graphics.drawImage(kuva, i, j, null);
                } catch (IOException ex) {
-                   graphics.setColor(Color.BLACK);
-                    graphics.fillOval(i*skaalaus, j*skaalaus, 10, 10);
+                   graphics.setColor(Color.YELLOW);
+                   graphics.fillRect(i, j, skaalaus, skaalaus);
                }
                 break;
             }

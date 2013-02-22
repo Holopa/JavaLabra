@@ -1,9 +1,16 @@
 ﻿Käyttöohje:
 Aloitus käyttöliittymässä on kenttä johon voit kirjoittaa hahmosi nimen, sen jälkeen voit käynnistää itse pelin "aloita peli"-napista.
+
+Aloitusliittymässä on olemassa tulostaulu, mutta siihen kirjoittaminen ei vielä toimi kunnolla joten se ei ole käytössä ja kaikki tulokset ovat 0.
+
 Pieni miekka kuvaa hahmoasi ja voit liikkua pelissä nuolinäppäimillä.
+
 Jokainen siirtyminen vähentää pisteitäsi 5llä.
-Siniset sienet antavat 100 pistettä ja
-punaiset sienet 10 voimapistettä.
-Voit halutessasi taistella sienimiesten kanssa menemällä samaan ruutuun sienimiehen kanssa. Taistelu tapahtuu niin, että molemmille arvotaan luku 1-100 väliltä ja hahmollesi lisätään lukuun hahmon voimapisteet. Jos saat suuremman luvun voitat sienimiehen ja saat 200 pistettä, mutta jos häviät pelisi loppuu siihen ja menetät 100 pistettä.
+
+Siniset sienet(Jos kuvat eivät toimi tämä on sininen ruutu) antavat 100 pistettä ja
+punaiset sienet(Jos kuvat eivät toimi tämä on punainen ruutu) 10 voimapistettä.
+
+Voit halutessasi taistella sienimiesten(Jos kuvat eivät toimi tämä on keltainen ruutu) kanssa menemällä samaan ruutuun sienimiehen kanssa. Taistelu tapahtuu niin, että molemmille arvotaan luku 1-100 väliltä ja hahmollesi lisätään lukuun hahmon voimapisteet. Jos saat suuremman luvun voitat sienimiehen ja saat 200 pistettä, mutta jos häviät pelisi loppuu siihen ja menetät 100 pistettä.
+
 Lopeta peli painamalla yläkulman ruksia kun olet mielestäsi saanut korkeimman mahdollisen pistesaldon.
 

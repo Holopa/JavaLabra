@@ -23,13 +23,20 @@ public class Tulokset {
     private File teksti;
     
     public Tulokset() throws FileNotFoundException{
-    tulokset = new String[10];
-    lukutaulu= new int[10];
-    teksti = new File("/cs/fs/home/jwholopa/JavaLabra/Tulokset.txt");
-    skanneri= new Scanner(teksti);
-    lueTulokset();
-    }
-    
+        tulokset = new String[10];
+        lukutaulu= new int[10];
+        teksti = new File("src/Tulokset.txt");
+        if (teksti.exists()){
+            skanneri= new Scanner(teksti);
+            lueTulokset();
+        }
+        else {
+            asetaTuloksetNolliksi();
+        }
+        }
+    /**
+     * lukee tulokset jos sakannerille annettiin kelvollinen tiedosto.
+     */
     private void lueTulokset(){
         int apu=0;
         while(skanneri.hasNextLine()&& apu<10){
@@ -43,6 +50,11 @@ public class Tulokset {
         }
     }
     
+    /**
+     * palauttaa tulostaulun i:nen tuloksen, muuten palauttaa tyhjän stringin
+     * @param i
+     * @return 
+     */
     public String kirjoitaTulokset(int i){
         if (i<10 && i >=0){
             return tulokset[i];
@@ -50,6 +62,11 @@ public class Tulokset {
         return "";
     }
     
+    /**
+     * Lisää tuloksen tuloslistaan jos lisättävä tulos on tarpeeksi suuri. tarkoitus olisi, että myös tulos tiedosto kirjoitettaisiin uudestaan joka kerta,
+     * mutta tätä en saanut ajan puutteen takia toimimaan.
+     * @param tulos 
+     */
     public void tuloksenLisays(int tulos){
         int apumuuttuja=tulos;
         int apumuuttuja2;
@@ -68,6 +85,13 @@ public class Tulokset {
                 }
             }
         } catch (IOException e) {}
+    }
+
+    private void asetaTuloksetNolliksi() {
+        for (int i = 0; i < 10; i++) {
+            lukutaulu[i]=0;
+            tulokset[i]="0";
+        }
     }
 
     
