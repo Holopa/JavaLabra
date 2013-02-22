@@ -1,0 +1,7 @@
+Ohjelmassa on kartta-olio, joka sisältää 2-ulotteisen taulun, jonka alkiot ovat Piste-oliota. Kun kartta luodaan luodaan myös nämä piste-oliot ja niille annetaan kartta-olion konstriktorin mukanan tulleen stringin mukaan Maasto arvo ja sieni-arvot. Sen lisäkis pisteellä voi olla yhteys toiseen pisteeseen. Kartan luonnin yhteydessä annetaan myös jokaiselle pisteelle sen mahdolliset yhteydet. Eli jos metsä pisteen vieressä on toinen metsäpiste lisätään näitten välille yhteys.
+
+Hahmo oliolle annetaan konstrukstosissa alkupiste. Hahmo voi liikkua toiseen pisteeseen jos siihen on olemassa yhteys.
+
+Kun hahmo liikkuu uuteen pisteeseen tarkistetaan onko siinä sientä, jos näin on se poimitaan, eli toimitaan eri sienten ominaisuuksien mukaan. Jos sieni on sienimies, taistellaan tämän kanssa.
+
+Taistelu on hyvin yksinkertainen. Molemmille arvotaan luku 1-100 ja hamolle lisätäätn tulokseen mahdollinen voima, suuremman luvun saanut voittaa. Jos sienimies voittaa kuolee hahmo, ja yhteydet viereisiin pisteisiin katkaistaan liikkumisen estämiseksi.
